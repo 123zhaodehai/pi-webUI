@@ -1,20 +1,18 @@
-# pi-web
+# pi-webUI
 
-[pi 编程智能体](https://github.com/badlogic/pi-mono) 的网页界面。在浏览器中浏览会话、与智能体对话、分叉对话、切换消息分支。
+基于 [pi-web](https://github.com/123zhaodehai/pi-web) 改造的 pi 编程智能体网页界面。
+
+在浏览器中浏览会话、与智能体对话、分叉对话、切换消息分支。
 
 ## 快速开始
 
-**无需安装，直接运行：**
+**本地开发：**
 
 ```bash
-npx @agegr/pi-web@latest
-```
-
-**或全局安装后使用：**
-
-```bash
-npm install -g @agegr/pi-web
-pi-web
+git clone git@github.com:123zhaodehai/pi-webUI.git
+cd pi-webUI
+npm install
+npm run dev
 ```
 
 启动后打开 [http://localhost:30141](http://localhost:30141)。
@@ -22,11 +20,9 @@ pi-web
 **可选参数：**
 
 ```bash
-pi-web --port 8080               # 自定义端口
-pi-web --hostname 127.0.0.1      # 仅本机访问
-pi-web -p 8080 -H 127.0.0.1     # 组合使用
-
-PORT=8080 pi-web                 # 也支持环境变量
+npm run dev -- --port 8080               # 自定义端口
+npm run dev -- --hostname 127.0.0.1      # 仅本机访问
+PORT=8080 npm run dev                    # 也支持环境变量
 ```
 
 ## 功能介绍
@@ -47,13 +43,6 @@ PORT=8080 pi-web                 # 也支持环境变量
 - **模型配置** — 从智能体数据目录下的 `models.json` 读取可用模型，可在侧边栏的「Models」面板中编辑。
 - **文件浏览** — 侧边栏内置文件浏览器，可在标签页中查看当前工作目录下的文件。
 
-## 开发
-
-```bash
-npm install
-npm run dev   # 端口 30141
-```
-
 ## 项目结构
 
 ```
@@ -73,3 +62,12 @@ lib/
 ```
 
 会话文件存储路径：`~/.pi/agent/sessions/<编码后的工作目录>/<时间戳>_<uuid>.jsonl`
+
+## 开发计划
+
+- 基于个人使用需求持续优化 UI 交互
+- 逐步添加自定义功能与主题
+
+## 许可证
+
+MIT
